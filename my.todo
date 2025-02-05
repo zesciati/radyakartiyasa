@@ -1,15 +1,16 @@
-[lang]-[version]: @today
-  ☐ memperbaiki link navigasi sesuai dengan bahasa nya
+[lang]: 
+  ✔ memperbaiki link navigasi sesuai dengan bahasa nya @done(25-02-05 12:15)
+  //LINK -../../../../Gambaran/WhatsApp Image 2025-02-05 at 11.22.05 AM.jpeg
 path file di Astro: 
   ☐ semua file termasuk destination harusnya dibawah file lang
-di file lang: 
-  ☐ ada file index.astro
-github: 
-  ☐ file yang didalem digital-doppler (hanya project folder yang di push)
-di file event: 
-  ☐ slider nya ga perlu.
-do's dont's dan accesibility:
-  ☐ dibuat dynamic placeholder. jumlah acces nya, do's dont's giman tampilannya
+  ✔ destinationpage @done(25-02-05 12:16)
+  ✔ eventpage @done(25-02-05 12:16)
+  ✔ aboutus @done(25-02-05 12:16)
+  ✔ index @done(25-02-05 12:16)
+
+do's dont's dan accesibility: @today
+  dibuat dynamic placeholder. jumlah acces nya, do's dont's gimana tampilannya
+  ☐ dynamic asset untuk dodont's homepage
 dynamic assets placeholder:
   ☐ depth first search untuk navbar bagian destinasi
 
@@ -29,3 +30,9 @@ Archive:
     ✔ Event index @done(25-02-04 11:03)
     ✔ Event page @done(25-02-04 11:00)
     ✔ Destination page @done(25-02-04 11:00)
+  di file lang: 
+    ✔ ada file index.astro @done(25-02-05 12:15)
+  github: 
+    ✔ file yang didalem digital-doppler (hanya project folder yang di push) @done(25-02-05 12:15)
+  di file event: 
+    ✔ slider nya ga perlu. @done(25-02-05 12:15)
