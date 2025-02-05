@@ -3,6 +3,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/destination/destination-do's_dont's.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 const { backgroundColor } = Astro.props;
+
+// Import JSON data
+import destinationDos_and_Donts1 from "../../data/destinations/destination-do's_dont's1.json";
+import destinationDos_and_Donts2 from "../../data/destinations/destination-do's_dont's2.json";
+
 ---
 <!-- NOTE destination-do's_dont's-->
 
@@ -53,21 +58,23 @@ const { backgroundColor } = Astro.props;
                 role="tabpanel"
                 aria-labelledby="home-tab"
                 tabindex="0">
+                {destinationDos_and_Donts1.map((item) => (
                 <div class="check-list-item mb-2">
                   <div class="check-icons" style="color: white; font-size: 18px;">
-                    <i class="bi bi-check"></i> Datang 1 jam lebih awal
+                    <i class="bi bi-check"></i> {item.text} 
                   </div>
                 </div>
-                <div class="check-list-item mb-2">
+                ))}
+                <!-- <div class="check-list-item mb-2">
                   <div class="check-icons" style="color: white; font-size: 18px;">
                     <i class="bi bi-check"></i> Mengenakan pakaian yang sopan, nyaman, dan berlengan
                   </div>
-                </div>
-                <div class="check-list-item mb-2">
+                </div> -->
+                <!-- <div class="check-list-item mb-2">
                   <div class="check-icons" style="color: white; font-size: 18px;">
                     <i class="bi bi-check"></i> Diperbolehkan mendokumentasikan koleksi sesuai arahan petugas
                   </div>
-                </div>
+                </div> -->
               </div>
               <div
                 class="tab-pane fade"
@@ -75,21 +82,23 @@ const { backgroundColor } = Astro.props;
                 role="tabpanel"
                 aria-labelledby="profile-tab"
                 tabindex="0">
+                {destinationDos_and_Donts2.map((item) => (
                 <div class="check-list-item mb-2">
                   <div class="check-icons" style="color: white; font-size: 18px;">
-                    <i class="bi bi-check"></i> Datang terlambat
+                    <i class="bi bi-check"></i> {item.text}
                   </div>
                 </div>
-                <div class="check-list-item mb-2">
+                ))}
+                <!-- <div class="check-list-item mb-2">
                   <div class="check-icons" style="color: white; font-size: 18px;">
                     <i class="bi bi-check"></i> Mengenakan pakaian yang tidak sopan
                   </div>
-                </div>
-                <div class="check-list-item mb-2">
+                </div> -->
+                <!-- <div class="check-list-item mb-2">
                   <div class="check-icons" style="color: white; font-size: 18px;">
                     <i class="bi bi-check"></i> Mendokumentasikan koleksi tanpa arahan petugas
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
