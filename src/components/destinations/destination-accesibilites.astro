@@ -2,6 +2,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/destination/destination-accesibilities.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+
+// Import JSON data
+import destinationAccesibilities from "../../data/destinations/destination-accesibilities.json";
+
 ---
 <!-- NOTE destination-accesibilities-->
 
@@ -10,34 +14,36 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 <section class="features-section" >
   <div class="container">
     <div class="row" style="color: #2D5D2B;">
+      {destinationAccesibilities.map((item) => (
       <div class="col-md-3 feature-box text-start">
         <div class="text-center mb-2">
             <i class="bi bi-circle-fill" style="color: #D6A84D;"></i>
         </div>
-        <h5 class="text-start">Kemudahan Akses Mobilitas</h5>
-        <p class="text-start">Kemudahan akses mobilitas di Museum Kraton Yogyakarta.</p>
+        <h5 class="text-start">{item.title}</h5>
+        <p class="text-start">{item.text}</p>
       </div>
-        <div class="col-md-3 feature-box text-start">
+      ))}
+        <!-- <div class="col-md-3 feature-box text-start">
           <div class="text-center mb-2">
               <i class="bi bi-circle-fill" style="color: #D6A84D;"></i>
           </div>
           <h5 class="text-start">Ramah Autis</h5>
           <p class="text-start">Ramah autis di Museum Kraton Yogyakarta.</p>
-      </div>
-      <div class="col-md-3 feature-box text-start">
+      </div> -->
+      <!-- <div class="col-md-3 feature-box text-start">
           <div class="text-center mb-2">
               <i class="bi bi-circle-fill" style="color: #D6A84D;"></i>
           </div>
           <h5 class="text-start">Ramah Kunjungan Tunarungu</h5>
           <p class="text-start">Ramah kunjungan tunarungu dengan teks yang informatif.</p>
-      </div>
-      <div class="col-md-3 feature-box text-start">
+      </div> -->
+      <!-- <div class="col-md-3 feature-box text-start">
           <div class="text-center mb-2">
               <i class="bi bi-circle-fill" style="color: #D6A84D;"></i>
           </div>
           <h5 class="text-start">Ramah Kunjungan Tunanetra</h5>
           <p class="text-start">Ramah kunjungan tunanetra dengan bantuan audio.</p>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
