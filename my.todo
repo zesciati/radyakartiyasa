@@ -8,10 +8,16 @@ path file di Astro:
   ✔ aboutus @done(25-02-05 12:16)
   ✔ index @done(25-02-05 12:16)
 
+Navigasi Navbar: @high
+  ☐ Home
+  ☐ Tentang Kami
+  ☐ Destinasi
+  ☐ Event
 do's dont's dan accesibility: @today
   dibuat dynamic placeholder. jumlah acces nya, do's dont's gimana tampilannya
   ✔ dynamic asset untuk dodont's homepage @done(25-02-05 12:58)
-  ☐ dynamic asset untuk dodont's destinasi 
+  ✔ dynamic asset untuk dodont's destinasi @done(25-02-05 14:06)
+  ✔ dynamic asset untuk IsiAcara event @done(25-02-05 14:28)
 dynamic assets placeholder:
   ☐ depth first search untuk navbar bagian destinasi
 

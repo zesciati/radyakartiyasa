@@ -20,23 +20,24 @@ import "../styles/navbar.css";
     <div class="collapse navbar-collapse " id="navbarNav">
       <ul class="navbar-nav mx-auto ">
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="/">Home</a>
+          <a class="nav-link " aria-current="page" href="/[lang]/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/aboutus">Tentang Kami</a>
+          <a class="nav-link" href="/[lang]/aboutus">Tentang Kami</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <!-- !tidak menuju ke destinationpage -->
+          <a class="nav-link" href="/[lang]/destinationpage" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Destinasi
             <img src="../img/icon/chevron-down-white.svg" alt="">
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Submenu 1</a></li>
-            <li><a class="dropdown-item" href="#">Submenu 2</a></li>
+            <li><a class="dropdown-item" href="/[lang]/destinationpage">Submenu 1</a></li>
+            <li><a class="dropdown-item" href="/[lang]/destinationpage">Submenu 2</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/eventpage">Event</a>
+          <a class="nav-link" href="/[lang]/eventpage">Event</a>
         </li>
         <li class="nav-item ">
           <a class="nav-link" href="#">Blog</a>

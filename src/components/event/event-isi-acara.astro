@@ -2,6 +2,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+
+// Import JSON data
+import eventIsiAcara from "../../data/event/event-isiacara.json";
+
 ---
 
 <!-- ISI ACARA SECTION -->
@@ -15,13 +19,15 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
               <span class="fs-3" style="margin-left:4%; font-family: 'TenorSans-Regular';">Isi Acara</span>
               <br>
               <br>
+              {eventIsiAcara.map((item) => (
               <ul class="list-unstyled" style="font-size: 20px;">
-                <li><i class="bi bi-check"></i> Sesi Edukasi dan Workshop Interaktif</li>
-                <li><i class="bi bi-check"></i> Pameran Produk dan Teknologi</li>
-                <li><i class="bi bi-check"></i> Sesi Konsultasi dan Diskusi</li>
-                <li><i class="bi bi-check"></i> Networking dan Kolaborasi</li>
-                <li><i class="bi bi-check"></i> Hadiah dan Doorprize</li>
+                <li><i class="bi bi-check"></i> {item.text}</li>
+                {/* <li><i class="bi bi-check"></i> Pameran Produk dan Teknologi</li> */}
+                {/* <li><i class="bi bi-check"></i> Sesi Konsultasi dan Diskusi</li> */}
+                {/* <li><i class="bi bi-check"></i> Networking dan Kolaborasi</li> */}
+                {/* <li><i class="bi bi-check"></i> Hadiah dan Doorprize</li> */}
               </ul>
+              ))}
             </div>
           </div>
         </div>
