@@ -1,8 +1,9 @@
 ---
-import Tentangkami from '../aboutus.astro';
+import AboutusDescription from "../../components/aboutus/aboutus-description.astro";
+import Homepagelayout from "../../layouts/Homepagelayout.astro";
+import AboutusHero from "../../components/aboutus/aboutus-hero.astro";
 
 export function getStaticPaths () {
-  
   return [
   {params: {lang: 'id-ID'}},
   {params: {lang: 'en-EN'}},
@@ -11,5 +12,8 @@ export function getStaticPaths () {
 const { lang} = Astro.params;
 ---
 
-<Tentangkami/>
+<Homepagelayout pageTitle="About Us">
+  <AboutusHero/>
+  <AboutusDescription/>
+</Homepagelayout>
 

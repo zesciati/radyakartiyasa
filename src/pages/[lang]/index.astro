@@ -15,11 +15,11 @@ const pageTitle = "Home Page Layout 🚀"
 export function getStaticPaths () {
   
   return [
-  {params: {lang: 'id', version: 'v1'}},
-  {params: {lang: 'en', version: 'v1'}},
+  {params: {lang: 'id-ID'}},
+  {params: {lang: 'en-EN'}},
   ];
 }
-const { lang, version } = Astro.params;
+const { lang } = Astro.params;
 ---
 
 

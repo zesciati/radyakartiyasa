@@ -1,7 +1,7 @@
 ---
 // Import JSON data
 import eventHero from "../../data/event/event-hero.json";
-import eventHero1 from "../../data/event/event-hero1.json";
+
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/event/event-hero.css/";
@@ -14,9 +14,9 @@ import Navbar from "../Navbar.astro";
   <Navbar/>
     <div class="container">
       <h1>Effective product marketing <br> techniques for small businesses</h1>
-      <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <!-- !gambar nya masih sama belum berbeda-beda  -->
+      <!-- <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel"> -->
+        <!-- <div class="carousel-inner">
+        
           {eventHero.map((item, index) => (
           <div class={`carousel-item ${index === 0 ? 'active' : ''}`}>
             <div class="row justify-content-center">
@@ -65,17 +65,17 @@ import Navbar from "../Navbar.astro";
             </div>
           </div>   */}
       
-        </div>
+        </div> -->
         <!-- Carousel controls -->
-        <button class="carousel-control-prev" style="left: 0px;" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
+        <!-- <button class="carousel-control-prev" style="left: 0px;" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" style="right: 0px;" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+        </button> -->
+      <!-- </div> -->
   
     </div>
 </section>

@@ -9,6 +9,14 @@ import DestinationDoDont from "../../components/destinations/destination-do's_do
 import Destinationpagelayout from "../../layouts/Destinationpagelayout.astro";
 const pageTitle = "Destination Page Layout 🚀";
 
+export function getStaticPaths () {
+  return [
+  {params: {lang: 'id-ID'}},
+  {params: {lang: 'en-EN'}},
+  ];
+}
+const { lang} = Astro.params;
+
 // Replace all frontmatter mockup to actual API fetching
 // const data = await fetch("https://backenddirectus.madebybagus.xyz", {
 //   headers: {
