@@ -1,6 +1,3 @@
-[lang]: 
-  ✔ memperbaiki link navigasi sesuai dengan bahasa nya @done(25-02-05 12:15)
-  //LINK -../../../../Gambaran/WhatsApp Image 2025-02-05 at 11.22.05 AM.jpeg
 path file di Astro: 
   ☐ semua file termasuk destination harusnya dibawah file lang
   ✔ destinationpage @done(25-02-05 12:16)
@@ -8,18 +5,23 @@ path file di Astro:
   ✔ aboutus @done(25-02-05 12:16)
   ✔ index @done(25-02-05 12:16)
 
-Navigasi Navbar: @high
-  ☐ Home
-  ☐ Tentang Kami
-  ☐ Destinasi
-  ☐ Event
-do's dont's dan accesibility: @today
+Navigasi Navbar: 
+  ✔ Home @done(25-02-05 14:59)
+  ✔ Tentang Kami @done(25-02-05 14:59)
+  ✔ Destinasi @done(25-02-05 15:00)
+    //NOTE - hanya dropdown saja yang bisa diklik
+  ✔ Event @done(25-02-05 14:58)
+do's dont's dan accesibility: 
   dibuat dynamic placeholder. jumlah acces nya, do's dont's gimana tampilannya
   ✔ dynamic asset untuk dodont's homepage @done(25-02-05 12:58)
   ✔ dynamic asset untuk dodont's destinasi @done(25-02-05 14:06)
   ✔ dynamic asset untuk IsiAcara event @done(25-02-05 14:28)
 dynamic assets placeholder:
   ☐ depth first search untuk navbar bagian destinasi
+
+Tugas: @critical
+  ☐ Mencari tau cara mengkonfigurasi ketika dibuka website nya langsung ke index yang berada di [lang] sesuai dengan bahasa
+  ☐ Mencari tau cara mengkonfigurasi navigasi sesuai dengan bahasa 
 
 Archive:
   ✔ Ctrl+G (Go to line) 
@@ -43,3 +45,6 @@ Archive:
     ✔ file yang didalem digital-doppler (hanya project folder yang di push) @done(25-02-05 12:15)
   di file event: 
     ✔ slider nya ga perlu. @done(25-02-05 12:15)
+  [lang]: 
+    ✔ memperbaiki link navigasi sesuai dengan bahasa nya @done(25-02-05 12:15)
+      //LINK -../../../../Gambaran/WhatsApp Image 2025-02-05 at 11.22.05 AM.jpeg
