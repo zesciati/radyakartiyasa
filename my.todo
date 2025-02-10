@@ -5,10 +5,10 @@ path file di Astro:
   ✔ aboutus @done(25-02-05 12:16)
   ✔ index @done(25-02-05 12:16)
 
-Event:
-  ☐ Menghapus komponen event lama dan menambahkan komponen event baru
+Event: @today
+  ☐ Menghapus komponen event lama dan menambahkan komponen event baru @inidulu
   ☐ Menghapus style css event lama dan menambahkan style css event baru
-dynamic assets placeholder: @today
+dynamic assets placeholder: 
   ☐ depth first search untuk navbar bagian destinasi
   ✔ dynamic assets placeholder untuk destination-accesibilities @done(25-02-05 15:38)
 
