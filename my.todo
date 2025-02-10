@@ -6,7 +6,9 @@ path file di Astro:
   ✔ index @done(25-02-05 12:16)
 
 Event: @today
-  ☐ Menghapus komponen event lama dan menambahkan komponen event baru @inidulu
+  ✔ Menghapus komponen event lama dan menambahkan komponen event baru @inidulu @done(25-02-10 15:26)
+  ☐ memperbaiki right side content event
+  ☐ menambahkan dynamic aset
   ☐ Menghapus style css event lama dan menambahkan style css event baru
 dynamic assets placeholder: 
   ☐ depth first search untuk navbar bagian destinasi
