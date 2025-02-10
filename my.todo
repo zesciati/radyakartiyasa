@@ -5,14 +5,16 @@ path file di Astro:
   ✔ aboutus @done(25-02-05 12:16)
   ✔ index @done(25-02-05 12:16)
 
-
-
+Event:
+  ☐ Menghapus komponen event lama dan menambahkan komponen event baru
+  ☐ Menghapus style css event lama dan menambahkan style css event baru
 dynamic assets placeholder: @today
   ☐ depth first search untuk navbar bagian destinasi
   ✔ dynamic assets placeholder untuk destination-accesibilities @done(25-02-05 15:38)
 
 Tugas: @critical
-  ☐ Mencari tau cara mengkonfigurasi ketika dibuka website nya langsung ke index yang berada di [lang] sesuai dengan bahasa
+  ✔ Mencari tau cara mengkonfigurasi ketika dibuka website nya langsung ke index yang berada di [lang] sesuai dengan bahasa @done(25-02-10 11:52)
+    tetapi masih ragu-ragu
   ☐ Mencari tau cara mengkonfigurasi navigasi sesuai dengan bahasa 
 
 Archive:
