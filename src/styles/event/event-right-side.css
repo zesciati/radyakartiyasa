@@ -1,0 +1,14 @@
+.btn:hover{
+  background-color: #0E3121;
+  color: #f7b24d;
+}
+
+.round-icon-btn {
+  border-radius: 50%; 
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
