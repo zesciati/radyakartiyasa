@@ -43,10 +43,10 @@
 }
 
 .kotak-abu{
-  
-  height: 40vh;
+  height: 75vh;
   background-color: #D6A84D;
 }
+
 @media (max-width: 768px) {
   .faq-container {
     flex-direction: column;
