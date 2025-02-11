@@ -5,7 +5,7 @@ import Eventpagelayout from "../../layouts/Eventpagelayout.astro";
 import EventHero from "../../components/event/event-hero.astro";
 import Eventfoto from "../../components/event/event-foto.astro";
 import Eventleftside from "../../components/event/event-left-side.astro";
-import Eventrightside from "../../components/event/event-right-side.astro";
+
 
 
 const pageTitle = "Event Page Layout 🚀";
@@ -24,7 +24,6 @@ const { lang } = Astro.params;
 <Eventpagelayout pageTitle={pageTitle}>
   <EventHero />
   <Eventleftside />
-  <!-- <Eventrightside /> -->
   <Eventfoto />
 </Eventpagelayout>
 

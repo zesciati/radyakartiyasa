@@ -7,9 +7,10 @@ path file di Astro:
 
 Event: @today
   ✔ Menghapus komponen event lama dan menambahkan komponen event baru @inidulu @done(25-02-10 15:26)
-  ☐ memperbaiki right side content event
-  ☐ menambahkan dynamic aset
-  ☐ Menghapus style css event lama dan menambahkan style css event baru
+  ✔ Menghapus style css event lama dan menambahkan style css event baru @done(25-02-10 15:28)
+  ✔ menambahkan dynamic aset pada event-foto @done(25-02-10 15:58)
+  ✔ memperbaiki right side content event @done(25-02-11 15:11) 
+  
 dynamic assets placeholder: 
   ☐ depth first search untuk navbar bagian destinasi
   ✔ dynamic assets placeholder untuk destination-accesibilities @done(25-02-05 15:38)
