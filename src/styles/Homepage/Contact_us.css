@@ -1,5 +1,5 @@
 .contact-section {
-  background: linear-gradient(to bottom, #032415 30%, #fff7e6 30%);
+  background: linear-gradient(to bottom, #032415 27%, #fff7e6 27%);
   padding: 20px;
   border-radius: 8px;
   width: 80%; 
@@ -17,24 +17,35 @@
   margin-bottom: 20px;
 }
 
+.left-column {
+  color: #032415;
+  font-size: 12px;
+}
+
 .form-control, .form-label {
   font-size: 14px; 
-  margin: 5px 0;
+  margin: 4px 0;
+  color: #032415;
+  font-size: 12px;
+}
+
+.info-card{
+  background-color: #ffffff;
 }
 
 .btn-submit {
-  background-color: #DEE0FF;
+  background-color: #ffffff;
   color: #032415;
-  padding: 10px 15px;
-  border: none;
+  padding: 7px 9px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+  font-size: 12px;
 }
 
 .btn-submit:hover {
   background-color: #0E3121;
-  color: #fff;
+  color: #D6A84D;
 }
 
 @media (max-width: 768px) {
