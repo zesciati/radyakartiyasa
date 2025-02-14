@@ -2,6 +2,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/event/event-right-side.css/";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+
+// Import JSON data
+import Dataeventrightside from "../../data/event/event-right-side.json";
+
 ---
 
   <!-- RIGHT COLUMN SECTION -->
@@ -30,7 +34,9 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
           </button>
         </div>
         <h5 class="card-title">Informasi Paket Wisata</h5>
-        <strong class="card-text"><i class="bi bi-ticket-detailed"></i> Harga Ticket: Rp 25.000/tiket</strong>
+        {Dataeventrightside.map((item)=>(
+        <strong class="card-text"><i class="bi bi-ticket-detailed"></i>Harga Ticket:{item.Hargatiket}/tiket</strong>
+        ))}
       </div>
     </div>
   </div>

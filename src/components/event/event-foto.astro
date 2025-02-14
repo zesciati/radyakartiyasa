@@ -19,7 +19,7 @@ import eventFoto from "../../data/event/event-foto.json";
         {eventFoto.map((item) => (
         <div class="col-sm-12 col-md-4">
           <div class="card border-0">
-            <img src="/img/keraton.webp" class="card-img-top rounded-bottom" alt="Jelajah Museum Karaton Yk">
+            <img src={item.src} class="card-img-top rounded-bottom" alt="Jelajah Museum Karaton Yk">
             <div class="card-body p-0">
               <div class="row mt-4">
                 <div class="col-md-4" style="text-align: center;">
@@ -37,6 +37,12 @@ import eventFoto from "../../data/event/event-foto.json";
           </div>
         </div>
       ))}
+      <!-- Navigation Arrows -->
+            <div class="d-flex mt-4 naviarrows">
+              <button class="btn btn-outline-secondary butarrow"><i class="bi bi-chevron-left"></i></button>
+              <button class="btn btn-outline-secondary butarrow"><i class="bi bi-chevron-right"></i></button>
+            </div>
+
         <!-- Card 2 -->
         {/* <div class="col-sm-12 col-md-4">
           <div class="card border-0">
