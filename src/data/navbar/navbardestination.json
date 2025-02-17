@@ -1,0 +1,22 @@
+[
+  {
+    "destinationsrc":"/[lang]/destinationpage",
+    "destinationtitle":"Submenu 1"
+  },
+  {
+    "destinationsrc":"/[lang]/destinationpage",
+    "destinationtitle":"Submenu 2"
+  },
+  {
+    "destinationsrc":"/[lang]/destinationpage",
+    "destinationtitle":"Submenu 3"
+  },
+  {
+    "destinationsrc":"/[lang]/destinationpage",
+    "destinationtitle":"Submenu 4"
+  },
+  {
+    "destinationsrc":"/[lang]/destinationpage",
+    "destinationtitle":"Submenu 5"
+  }
+]

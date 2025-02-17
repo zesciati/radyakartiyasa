@@ -4,6 +4,7 @@ import "../styles/navbar.css";
 
 // Import JSON data
 import Navbardata from "./../data/navbar/navbar.json";
+import Navbardestinationdata from "./../data/navbar/navbardestination.json";
 
 ---
 
@@ -37,8 +38,10 @@ import Navbardata from "./../data/navbar/navbar.json";
             <img src="../img/icon/chevron-down-white.svg" alt="">
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/[lang]/destinationpage">Submenu 1</a></li>
-            <li><a class="dropdown-item" href="/[lang]/destinationpage">Submenu 2</a></li>
+            {Navbardestinationdata.map((item)=>(
+            <li><a class="dropdown-item" href={item.destinationsrc}>{item.destinationtitle}</a></li>
+            ))}
+            {/* <li><a class="dropdown-item" href="/[lang]/destinationpage">Submenu 2</a></li> */}
           </ul>
         </li>
         <li class="nav-item">
