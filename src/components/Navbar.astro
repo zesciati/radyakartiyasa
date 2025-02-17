@@ -21,18 +21,19 @@ import Navbardata from "./../data/navbar/navbar.json";
       <span class="navbar-toggler-icon"></span>
     </button>
     <!-- Navbar Links -->
+    {Navbardata.map((item)=>(
     <div class="collapse navbar-collapse " id="navbarNav">
       <ul class="navbar-nav mx-auto ">
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="/[lang]/">Home</a>
+          <a class="nav-link " aria-current="page" href={item.src[0]}>{item.title[0]}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/[lang]/aboutus">Tentang Kami</a>
+          <a class="nav-link" href={item.src[1]}>{item.title[1]}</a>
         </li>
         <li class="nav-item dropdown">
           <!-- !tidak menuju ke destinationpage -->
           <a class="nav-link" href="/[lang]/destinationpage" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Destinasi
+            {item.title[5]}
             <img src="../img/icon/chevron-down-white.svg" alt="">
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -41,19 +42,20 @@ import Navbardata from "./../data/navbar/navbar.json";
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/[lang]/eventpage">Event</a>
+          <a class="nav-link" href={item.src[2]}>{item.title[2]}</a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" href="#">Blog</a>
+          <a class="nav-link" href="#">{item.title[3]}</a>
         </li>
         
-        <!-- <li class="nav-item">
+        {/* <!-- <li class="nav-item">
           <a class="btn btn-outline-light " href="#">Hubungi Kami</a>
-        </li> -->
+        </li> --> */}
       </ul>
       <br>
-        <a class="btn btn-outline-light me-auto" href="#">Hubungi Kami</a>
+        <a class="btn btn-outline-light me-auto" href={item.src[3]}>{item.title[4]}</a>
     </div>
+    ))}
   </div>
 </nav>  
 

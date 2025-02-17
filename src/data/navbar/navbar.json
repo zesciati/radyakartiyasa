@@ -1,18 +1,6 @@
 [
   {
-    "src":"/[lang]/",
-    "title":"Home"
-  },
-  {
-    "src":"/[lang]/aboutus",
-    "title":"Tentang Kami"
-  },
-  {
-    "src":"/[lang]/eventpage",
-    "title":"Event"
-  },
-  {
-    "src":"#",
-    "title":"Blog"
+    "src":["/[lang]/","/[lang]/aboutus","/[lang]/eventpage","#"],
+    "title":["Home","Tentang Kami","Event","Blog","Hubungi Kami","Destinasi"] 
   }
 ]
