@@ -9,6 +9,14 @@ import DestinationDoDont from "../../components/destinations/destination-do's_do
 import Destinationpagelayout from "../../layouts/Destinationpagelayout.astro";
 const pageTitle = "Destination Page Layout 🚀";
 
+const identity = {
+  title: "destinationpage",
+  date: "2025-02-18",
+  description: "Deskripsi singkat artikel ini",
+  tags: ["tutorial", "web development", "astro"],
+  permalink: "/[lang]/destinationpage"
+};
+
 export function getStaticPaths () {
   return [
   {params: {lang: 'id-ID'}},
