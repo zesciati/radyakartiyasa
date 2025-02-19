@@ -1,6 +1,7 @@
 import { validateForm } from "./middleware.js";
 import { config } from "./utilsSecret.js";
 
+// Form submission (mengirim form ke server)
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contactForm");
     if(form) {
@@ -15,24 +16,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // AJAX approach
-export async function POST(formElement) {
-    const formData = await formElement.request.FormData();
-    const token = formData.get('cf-turnstile-response');
+export async function POST(ctx) {
+    const data = await ctx.request.formData();
+    const turnstileToken = data.get('cf-turnstile-response');
+    const secretKey = "0x4AAAAAAA60IBfLmFTToJEJ";
 
+    // Verfikasi Turnstile
     const turnstile = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            secret: config.secretKey,
-            response: token
+            secret: secretKey,
+            response: turnstileToken
         }),
     });
     console.dir(turnstile.status);
-    if (turnstile.ok) {
-        // Kirim ke backend
-     const response = await fetch('https://backenddirectus.madebybagus.xyz/items/contact', {
+    if (turnstile.ok) { // Simpan ke directus
+     const directus = await fetch('https://backenddirectus.madebybagus.xyz/items/contact', {
         headers: {
             "Content-Type": "application/json",
 
@@ -42,12 +44,12 @@ export async function POST(formElement) {
         },
         method: "POST",
 
-        body: JSON.stringify({
-            name,
-            email,
-            phone_number,
-            assistance_type,
-            message
+        body: JSON.stringify({ // JSON.stringify(), mengonversi objek JavaScript menjadi string JSON
+            name: data.get("name"),
+            email: data.get("email"),
+            phone_number: data.get("phone_number"),
+            assistance_type: data.get("assistance_type"),
+            message: data.get("message"),
         })
     });
     return directus;
@@ -55,23 +57,11 @@ export async function POST(formElement) {
     return new Response(JSON.stringify({message:"Fail"},{status:400}));
 }
 
-    // Validasi form
-    // const name = formData.get("name");
-    // const email = formData.get("email");
-    // const phone_number = formData.get("phone_number");
-    // const assistance_type = formData.get("assistance_type");
-    // const message = formData.get("message");
-
-    // const validationResponse = validateForm({ name, email, phone_number, assistance_type, message });
-    // if (!validationResponse.success) {
-    //     return { error: validationResponse.message };
-    // }
-
-export function validateForm(data) {
-    for (let key in data) {
-        if (!data[key]) {
-            return { success: false, message: `Please fill out the ${key}.` };
-        }
-    }
-    return { success: true };
-}
+// export function validateForm(data) {
+//     for (let key in data) {
+//         if (!data[key]) {
+//             return { success: false, message: `Please fill out the ${key}.` };
+//         }
+//     }
+//     return { success: true };
+// }

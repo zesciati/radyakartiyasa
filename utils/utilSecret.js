@@ -5,5 +5,3 @@ export const config = { //ini punya backend
         "CF-Access-Client-Secret": "f7f4995a6d1cd59926c34ffda3a1b3014f4eb7cc79855af29b97ba9d53deaf97"
     }
 };
-
-export const secretKey = "0x4AAAAAAA60IBfLmFTToJEJ";
