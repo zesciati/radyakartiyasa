@@ -6,16 +6,18 @@ import EventHero from "../../components/event/event-hero.astro";
 import Eventfoto from "../../components/event/event-foto.astro";
 import Eventleftside from "../../components/event/event-left-side.astro";
 
-const pageTitle = "Event Page Layout 🚀";
+// const pageTitle = "Event Page Layout 🚀";
 
 
 const identity = {
-  title: "eventpage",
+  title: "Event Page Layout 🚀",
   date: "2025-02-18",
   description: "Deskripsi singkat artikel ini",
   tags: ["tutorial", "web development", "astro"],
   permalink: "/[lang]/eventpage"
 };
+
+export const prerender = true
 
 export function getStaticPaths () {
 return [
@@ -27,7 +29,7 @@ return [
 const { lang } = Astro.params;
 ---
 
-<Eventpagelayout pageTitle={pageTitle}>
+<Eventpagelayout pageTitle={identity.title}>
   <EventHero />
   <Eventleftside />
   <Eventfoto />
