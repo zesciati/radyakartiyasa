@@ -1,5 +1,5 @@
-import { validateForm } from "./middleware.js";
-import { config } from "./utilsSecret.js";
+// import { validateForm } from "./middleware.js";
+// import { config } from "./utilsSecret.js";
 
 // Form submission (mengirim form ke server)
 document.addEventListener("DOMContentLoaded", function () {
