@@ -18,7 +18,7 @@
 }
 
 .left-column {
-  color: #a49a9a; /* TULISAN SISI KIRI */
+  color: #757070;
   font-size: 12px;
 }
 
@@ -26,6 +26,10 @@
   font-size: 14px; 
   margin: 4px 0;
   color: #032415;
+  font-size: 12px;
+}
+
+.form-select{
   font-size: 12px;
 }
 

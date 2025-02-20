@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            // Cek format email
+            // Cek format email 
             if (!email.includes("@")) {
                 alert("Email tidak valid!");
                 return;
@@ -65,7 +65,7 @@ export async function POST(ctx) {
     if (!directus.ok) {
         return new Response(
             JSON.stringify({ message: "Gagal menyimpan data ke Directus" }),
-            { status: 500 }
+            { status: 400 }
         );
     }
     return new Response(

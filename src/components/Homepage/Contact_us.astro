@@ -57,8 +57,14 @@ import "../../styles/Homepage/Contact_us.css";
                   <input type="email" class="form-control" id="email" placeholder="Isikan dengan email aktif Anda">
                 </div>
                 <div class="mb-3">
-                  <label for="profession" class="form-label">Profesi Anda</label>
-                  <input type="text" class="form-control" id="profession" placeholder="Profesi Anda saat ini">
+                  <label for="profession" class="form-label">Profesi</label>
+                  <select class="form-select">
+                    <option value="" disabled selected>Pilih profesi Anda saat ini</option>
+                    <option value="Karyawan Swasta">Karyawan Swasta</option>
+                    <option value="Wirausaha">Wirausaha</option>
+                    <option value="Mahasiswa">Mahasiswa</option>
+                    <option value="Lainnya">Lainnya</option>
+                  </select>
                 </div>
                 <div class="mb-3">
                   <label for="phone" class="form-label">No. Handphone</label>

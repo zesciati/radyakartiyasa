@@ -7,5 +7,7 @@ export default defineConfig({
   //   '/index': '/id-ID/',
   // },
   output: 'server',
-  adapter: cloudflare(),
+  adapter: node({
+    mode: 'standalone',
+  }),
 });
