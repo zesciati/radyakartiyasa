@@ -14,6 +14,8 @@ const identity = {
   permalink: "/id-ID/"
 };
 
+const {lang} = Astro.props;
+
 
 
 // const data = await fetch("https://backenddirectus.madebybagus.xyz", {
@@ -37,7 +39,7 @@ const identity = {
                 <h2 class="title">{identity.title}</h2>
               </div>
               <div class="col-md-3 text-md-end text-center">
-                <a href="/[lang]/destination" class="btn btn-outline-dark border-0 icon-hover">Lihat semua Destinasi <img src="../img/icon/arrow-right.svg" class="ms-2 icon" alt="Arrow"></a>
+                <a href=`/${lang}/destination` class="btn btn-outline-dark border-0 icon-hover">Lihat semua Destinasi <img src="../img/icon/arrow-right.svg" class="ms-2 icon" alt="Arrow"></a>
               </div>
             </div>
 

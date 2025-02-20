@@ -3,7 +3,7 @@
 import Homepagelayout from "../../layouts/Homepagelayout.astro"
 import HomepageHero from "../../components/Homepage/Hero.astro"
 import HomepageAbout_us from "../../components/Homepage/About_us.astro"
-import HomepageDestinationIndex from "../../components/Homepage/Destination_and_event_slider.astro"
+import HomepageDestinationIndex from "../../components/Homepage/Destination_index.astro"
 import HomepagePromo from "../../components/Homepage/Promo.astro"
 import HomepageEventIndex from "../../components/Homepage/Event_index.astro"
 import HomepageGallery from "../../components/Homepage/Home_gallery.astro"
@@ -17,7 +17,7 @@ export function getStaticPaths () {
   
   return [
   {params: {lang: 'id-ID'}},
-  {params: {lang: 'en-EN'}},
+  {params: {lang: 'en-US'}},
   ];
 }
 const { lang } = Astro.params;
@@ -28,12 +28,12 @@ export const prerender = true
 <!-- HOMEPAGE -->
 <Homepagelayout pageTitle={pageTitle}>
   <HomepageHero/>
-  <HomepageAbout_us/>
-  <HomepageDestinationIndex/>
-  <HomepagePromo/>
-  <HomepageEventIndex/>
-  <HomepageGallery/>
+  <HomepageAbout_us lang={lang}/>
+  <HomepageDestinationIndex lang={lang}/>
+  <HomepagePromo lang={lang}/>
+  <HomepageEventIndex lang={lang}/>
+  <HomepageGallery />
   <HomepageDoDont />
-  <HomepageTestimonial/>
-  <HomepageFAQ/>
+  <HomepageTestimonial />
+  <HomepageFAQ />
 </Homepagelayout>
