@@ -17,7 +17,6 @@ const identity = {
   permalink: "/[lang]/eventpage"
 };
 
-export const prerender = true
 
 export function getStaticPaths () {
 return [
@@ -27,6 +26,8 @@ return [
 }
 
 const { lang } = Astro.params;
+export const prerender = true
+
 ---
 
 <Eventpagelayout pageTitle={identity.title}>

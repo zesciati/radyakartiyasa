@@ -12,7 +12,6 @@ import HomepageFAQ from "../../components/Homepage/FAQ.astro"
 import HomepageDoDont from "../../components/Homepage/do's_dont's.astro";
 const pageTitle = "Home Page Layout 🚀"
 
-export const prerender = true
 
 export function getStaticPaths () {
   
@@ -22,6 +21,8 @@ export function getStaticPaths () {
   ];
 }
 const { lang } = Astro.params;
+export const prerender = true
+
 ---
 
 <!-- HOMEPAGE -->

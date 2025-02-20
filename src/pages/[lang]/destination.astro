@@ -17,7 +17,6 @@ const identity = {
   permalink: "/[lang]/destinationpage"
 };
 
-export const prerender = true
 
 export function getStaticPaths () {
   return [
@@ -26,6 +25,8 @@ export function getStaticPaths () {
   ];
 }
 const { lang} = Astro.params;
+export const prerender = true
+
 
 // Replace all frontmatter mockup to actual API fetching
 // const data = await fetch("https://backenddirectus.madebybagus.xyz", {
