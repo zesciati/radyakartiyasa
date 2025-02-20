@@ -1,5 +1,5 @@
 .bungkus {
-  background-image: url('./img/teras-background.png');
+  background-image: url('/img/teras-background.png');
   background-size: cover;
   background-repeat: repeat;
 }
