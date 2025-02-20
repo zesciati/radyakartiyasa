@@ -17,6 +17,8 @@ const identity = {
   permalink: "/[lang]/destinationpage"
 };
 
+export const prerender = true
+
 export function getStaticPaths () {
   return [
   {params: {lang: 'id-ID'}},

@@ -3,6 +3,8 @@ import AboutusDescription from "../../components/aboutus/aboutus-description.ast
 import Homepagelayout from "../../layouts/Homepagelayout.astro";
 import AboutusHero from "../../components/aboutus/aboutus-hero.astro";
 
+export const prerender = true
+
 export function getStaticPaths () {
   return [
   {params: {lang: 'id-ID'}},
