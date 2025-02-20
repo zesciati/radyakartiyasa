@@ -3,13 +3,17 @@ import AboutusDescription from "../../components/aboutus/aboutus-description.ast
 import Homepagelayout from "../../layouts/Homepagelayout.astro";
 import AboutusHero from "../../components/aboutus/aboutus-hero.astro";
 
+
+
 export function getStaticPaths () {
   return [
   {params: {lang: 'id-ID'}},
-  {params: {lang: 'en-EN'}},
+  {params: {lang: 'en-US'}},
   ];
 }
 const { lang} = Astro.params;
+
+export const prerender = true
 ---
 
 <Homepagelayout pageTitle="About Us">

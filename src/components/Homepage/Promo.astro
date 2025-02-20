@@ -2,6 +2,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/Homepage/Promo.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+
+const {lang} = Astro.props;
+
 ---
 
 <section class="promo-section d-flex align-items-center">
@@ -14,7 +17,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
         </p>
       </div>
       <div class="col-lg-4 text-lg-end text-center">
-        <a href="#" class="promo-btn">
+        <a href=`/${lang}/` class="promo-btn">
           Informasi selengkapnya <span class="bi bi-arrow-right"></span>
         </a>
       </div>

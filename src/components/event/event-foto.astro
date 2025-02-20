@@ -2,38 +2,51 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/event/event-foto.css/";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+
+// Import JSON data
+import eventFoto from "../../data/event/event-foto.json";
+
 ---
 
-<div style="width: 100%; background-color: #ccc; height: 1px;"></div>
-  
-  <!-- 3 Foto -->
-  <div class="container my-5">
+
+<!-- 3 Foto -->
+<div class="container my-5">
+  <div class="border-bottom" style="margin-bottom: 5%;"></div>
     <h2 class="mb-4">Event lainnya dari museum Kraton Yogyakarta</h2>
     <div class="row">
         <!-- Card 1 -->
+        
+        {eventFoto.map((item) => (
         <div class="col-sm-12 col-md-4">
-          <div class="card">
-            <img src="./img/keraton.webp" class="card-img-top" alt="Jelajah Museum Karaton Yk">
+          <div class="card border-0">
+            <img src={item.src} class="card-img-top rounded-bottom" alt="Jelajah Museum Karaton Yk">
             <div class="card-body p-0">
-              <div class="row">
+              <div class="row mt-4">
                 <div class="col-md-4" style="text-align: center;">
-                  <h5 style="color: #f7b24d;">NOV</h5>
-                  <h4>25 - 26</h4>
+                  <h5 style="color: #f7b24d;">{item.bulan}</h5>
+                  <h4>{item.tgl}</h4>
                 </div>
                 <div class="col-md-8">
-                  <strong class="card-title">Jelajah Museum Karaton Yk</strong>
-                <p class="card-text">Adventure Geek - Explore the Unexplored</p>
-                <p class="card-text"><small class="text-muted">8:30 AM - 7:30 PM</small></p>
-                <p class="card-text"><i class="bi bi-ticket-detailed me-2"></i>IDR 250.000</p>
+                  <strong class="card-title">{item.title}</strong>
+                <p class="card-text">{item.text}</p>
+                <p class="card-text"><small class="text-muted">{item.time}</small></p>
+                <p class="card-text"><i class="bi bi-ticket-detailed me-2"></i>{item.price}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      ))}
+      <!-- Navigation Arrows -->
+            <div class="d-flex mt-4 naviarrows">
+              <button class="btn btn-outline-secondary butarrow"><i class="bi bi-chevron-left"></i></button>
+              <button class="btn btn-outline-secondary butarrow"><i class="bi bi-chevron-right"></i></button>
+            </div>
+
         <!-- Card 2 -->
-        <div class="col-sm-12 col-md-4">
-          <div class="card">
-            <img src="./img/keraton.webp" class="card-img-top" alt="Jelajah Museum Karaton Yk">
+        {/* <div class="col-sm-12 col-md-4">
+          <div class="card border-0">
+            <img src="/img/keraton.webp" class="card-img-top rounded-bottom" alt="Jelajah Museum Karaton Yk">
             <div class="card-body p-0">
               <div class="row">
                 <div class="col-md-4" style="text-align: center;">
@@ -49,12 +62,12 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
               </div>
             </div>
           </div>
-        </div>
+        </div>  */}
 
         <!-- Card 3 -->
-        <div class="col-sm-12 col-md-4">
-          <div class="card">
-            <img src="./img/keraton.webp" class="card-img-top" alt="Jelajah Museum Karaton Yk">
+        {/* <div class="col-sm-12 col-md-4">
+          <div class="card border-0 ">
+            <img src="/img/keraton.webp" class="card-img-top rounded-bottom" alt="Jelajah Museum Karaton Yk">
             <div class="card-body p-0">
               <div class="row">
                 <div class="col-md-4" style="text-align: center;">
@@ -70,7 +83,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
               </div>
             </div>
           </div>
-        </div>
+        </div>  */}
     </div>
   </div>
 

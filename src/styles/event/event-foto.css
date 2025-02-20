@@ -16,3 +16,16 @@
     font-weight: bold;
     margin-top: 10px;
   }
+  .naviarrows {
+    position: relative;
+  }
+  .naviarrows .butarrow {
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 18px; 
+    margin: 0 10px;
+  }
+  
+  .naviarrows .butarrow i {
+    font-size: 1.0rem;
+  }

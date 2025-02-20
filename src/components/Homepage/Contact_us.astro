@@ -47,7 +47,7 @@ import "../../styles/Homepage/Contact_us.css";
         <!-- Right Column -->
           <div class="col-lg-6" style="margin-top: 10px;">
             <div class="info-card p-3 rounded" style="font-size: 12px; width: 90%;">
-              <form action="/api/subscribe" method="POST">
+              <form method="POST">
                 <div class="mb-3">
                   <label for="name" class="form-label">Nama</label>
                   <input type="text" class="form-control" id="name" placeholder="Isikan nama lengkap Anda">
@@ -69,8 +69,8 @@ import "../../styles/Homepage/Contact_us.css";
                   <textarea class="form-control" id="message" rows="4" placeholder="Tuliskan pesan disini ..."></textarea>
                 </div>
 
-                <!-- Turnstile Captcha -->
-                <div class="cf-turnstile" data-sitekey="0x4AAAAAAA60IP8ntKMCYlZ0M5oztMXMIps"></div>
+                <!-- Site Key Turnstile -->
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAAA9jiHjYAxKgY1mc"></div>
       
                 <button type="submit" class="btn btn-dark btn-submit">Kirim Pesan</button>
               </form>
@@ -80,6 +80,7 @@ import "../../styles/Homepage/Contact_us.css";
       </div>
     </section>
   </body>
+</html>
 
 
 

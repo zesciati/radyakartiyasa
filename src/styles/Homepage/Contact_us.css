@@ -48,7 +48,6 @@
   color: #D6A84D;
 }
 
-/* RESPONSIVE DESIGN */
 @media (max-width: 992px) {
   .contact-section {
     width: 90%;

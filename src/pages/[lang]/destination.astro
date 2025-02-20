@@ -7,15 +7,26 @@ import DestinationDescription from "../../components/destinations/destination-de
 import DestinationAccesibilities from "../../components/destinations/destination-accesibilites.astro";
 import DestinationDoDont from "../../components/destinations/destination-do's_dont's.astro";
 import Destinationpagelayout from "../../layouts/Destinationpagelayout.astro";
-const pageTitle = "Destination Page Layout 🚀";
+// const pageTitle = "Destination Page Layout 🚀";
+
+const identity = {
+  title: "Destination Page Layout 🚀",
+  date: "2025-02-18",
+  description: "Deskripsi singkat artikel ini",
+  tags: ["tutorial", "web development", "astro"],
+  permalink: "/[lang]/destinationpage"
+};
+
 
 export function getStaticPaths () {
   return [
   {params: {lang: 'id-ID'}},
-  {params: {lang: 'en-EN'}},
+  {params: {lang: 'en-US'}},
   ];
 }
 const { lang} = Astro.params;
+export const prerender = true
+
 
 // Replace all frontmatter mockup to actual API fetching
 // const data = await fetch("https://backenddirectus.madebybagus.xyz", {
@@ -32,7 +43,7 @@ const { lang} = Astro.params;
 ---
 
 
-    <Destinationpagelayout pageTitle={pageTitle}>
+    <Destinationpagelayout pageTitle={identity.title}>
       <DestinationHero />
       <DestinationDescription />
       <DestinationAccesibilities />

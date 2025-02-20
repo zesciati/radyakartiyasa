@@ -1,25 +1,35 @@
-// import { validateForm } from "./middleware.js";
-// import { config } from "./utilsSecret.js";
+// import { function } from "./middleware.js";
+import { config, secretKey } from "./utilsSecret.js";
 
-// Form submission (mengirim form ke server)
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contactForm");
+
     if(form) {
         form.addEventListener("submit", async function (e) {
             e.preventDefault();
-            const result = await sendForm(form);
-            const notification = document.getElementById('notification');
-            notification.style.display = 'block';
-            notification.textContent = result.message || result.error;
+            const name = form.name.value.trim();
+            const email = form.email.value.trim();
+            const profession = form.profession.value.trim();
+            const phone = form.phone.value.trim();
+            const message = form.message.value.trim();
+
+            if (!name || !email || !profession || !phone || !message) {
+                alert("Kolom harus diisi!");
+                return;
+            }
+
+            // Cek format email
+            if (!email.includes("@")) {
+                alert("Email tidak valid!");
+                return;
+            }
         });
     }
 });
 
-// AJAX approach
 export async function POST(ctx) {
     const data = await ctx.request.formData();
     const turnstileToken = data.get('cf-turnstile-response');
-    const secretKey = "0x4AAAAAAA60IBfLmFTToJEJ";
 
     // Verfikasi Turnstile
     const turnstile = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
@@ -32,19 +42,19 @@ export async function POST(ctx) {
             response: turnstileToken
         }),
     });
+
     console.dir(turnstile.status);
-    if (turnstile.ok) { // Simpan ke directus
+    if (turnstile.ok) {
      const directus = await fetch('https://backenddirectus.madebybagus.xyz/items/contact', {
         headers: {
             "Content-Type": "application/json",
-
             Authorization: config.Authorization,
             "CF-Access-Client-Id": config.headers["CF-Access-Client-Id"],
             "CF-Access-Client-Secret": config.headers["CF-Access-Client-Secret"],
         },
         method: "POST",
 
-        body: JSON.stringify({ // JSON.stringify(), mengonversi objek JavaScript menjadi string JSON
+        body: JSON.stringify({
             name: data.get("name"),
             email: data.get("email"),
             phone_number: data.get("phone_number"),
@@ -52,16 +62,15 @@ export async function POST(ctx) {
             message: data.get("message"),
         })
     });
-    return directus;
+    if (!directus.ok) {
+        return new Response(
+            JSON.stringify({ message: "Gagal menyimpan data ke Directus" }),
+            { status: 500 }
+        );
     }
-    return new Response(JSON.stringify({message:"Fail"},{status:400}));
+    return new Response(
+        JSON.stringify({ message: "Form berhasil dikirim!" }),
+        { status: 200 }
+    );
+    }
 }
-
-// export function validateForm(data) {
-//     for (let key in data) {
-//         if (!data[key]) {
-//             return { success: false, message: `Please fill out the ${key}.` };
-//         }
-//     }
-//     return { success: true };
-// }

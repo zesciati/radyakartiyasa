@@ -4,6 +4,17 @@ import "../../styles/Homepage/Event_index.css";
 // Import JSON data
 import homeEventIndex from "../../data/Homepage/home-eventindex.json";
 
+const identity = {
+  title: "Event_index",
+  date: "2025-02-18",
+  description: "Deskripsi singkat artikel ini",
+  tags: ["tutorial", "web development", "astro"],
+  permalink: "/id-ID/"
+};
+
+const {lang} = Astro.props;
+
+
 
 // const data = await fetch("https://backenddirectus.madebybagus.xyz", {
 //   headers: {
@@ -35,7 +46,7 @@ import homeEventIndex from "../../data/Homepage/home-eventindex.json";
               </div>
               <div class="link">
                 <div class="d-flex align-items-center group-3-copy-2">
-                  <a href="/[lang]/eventpage" class="btn btn-outline-dark border-0 icon-hover">Lihat Acara dan pameran
+                  <a href=`/${lang}/event` class="btn btn-outline-dark border-0 icon-hover">Lihat Acara dan pameran
                   <img class="group ms-2 icon" src="../img/icon/arrow-right.svg" />
                 </a>
                 </div>
