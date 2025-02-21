@@ -1,9 +1,7 @@
 ---
 // *ini digunakan untuk template yang akan dipakai berbagai halaman*
 const { pageTitle } = Astro.props;
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
-import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "../components/footer.astro";
 ---
 
 <html lang="en">
@@ -15,7 +13,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
     <title>{pageTitle}</title>
   </head>
   <body>
+
     <!-- <Navbar /> -->
+    <!-- <h1>{pageTitle}</h1> -->
     <slot />
     <Footer />
     <script

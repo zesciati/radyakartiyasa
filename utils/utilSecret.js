@@ -12,6 +12,7 @@ export const config = {
 
 // Optimizable MIMEs (Ganti tipe webp)
 
+
 // Slugify function
 
 // Date format function
@@ -42,7 +43,8 @@ export const daysTranslation = {
 export function translatedDay(dateString, lang = "id", format = "full") {
     const date = new Date(dateString);
     const day = date.getDay();
-    return daysTranslation[lang][format][dayIndex];
+    return daysTranslation[lang][format][day];
 }
+// 0 minggu, kalau lang eng nya sunday
 
 // Get interface function
