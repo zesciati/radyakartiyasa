@@ -30,7 +30,6 @@ export async function POST(ctx) {
     const data = await ctx.request.formData();
     const turnstileToken = data.get('cf-turnstile-response');
 
-    // Verfikasi Turnstile
     const turnstile = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
         method: 'POST',
         headers: {
@@ -46,10 +45,10 @@ export async function POST(ctx) {
     if (turnstile.ok) {
      const directus = await fetch('https://backenddirectus.madebybagus.xyz/items/contact', {
         headers: {
-            "Content-Type": "application/json",
             Authorization: config.Authorization,
             "CF-Access-Client-Id": config.headers["CF-Access-Client-Id"],
             "CF-Access-Client-Secret": config.headers["CF-Access-Client-Secret"],
+            "Content-Type": "application/json",
         },
         method: "POST",
 
@@ -61,15 +60,8 @@ export async function POST(ctx) {
             message: data.get("message"),
         })
     });
-    if (!directus.ok) {
-        return new Response(
-            JSON.stringify({ message: "Gagal menyimpan data ke Directus" }),
-            { status: 400 }
-        );
+
+    return directus;
     }
-    return new Response(
-        JSON.stringify({ message: "Form berhasil dikirim!" }),
-        { status: 200 }
-    );
-    }
+    return new Response(JSON.stringify({message:"Failure"},{status:400}));
 }
