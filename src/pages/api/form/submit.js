@@ -1,30 +1,30 @@
 // import { function } from "./middleware.js";
 import { config, secretKey } from "./utilsSecret.js";
 
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contactForm");
+// document.addEventListener("DOMContentLoaded", function () {
+//     const form = document.getElementById("contactForm");
 
-    if(form) {
-        form.addEventListener("submit", async function (e) {
-            e.preventDefault();
-            const name = form.name.value.trim();
-            const email = form.email.value.trim();
-            const profession = form.profession.value.trim();
-            const phone = form.phone.value.trim();
-            const message = form.message.value.trim();
+//     if(form) {
+//         form.addEventListener("submit", async function (e) {
+//             e.preventDefault();
+//             const name = form.name.value.trim();
+//             const email = form.email.value.trim();
+//             const profession = form.profession.value.trim();
+//             const phone = form.phone.value.trim();
+//             const message = form.message.value.trim();
 
-            if (!name || !email || !profession || !phone || !message) {
-                alert("Kolom harus diisi!");
-                return;
-            }
+//             if (!name || !email || !profession || !phone || !message) {
+//                 alert("Kolom harus diisi!");
+//                 return;
+//             }
 
-            if (!email.includes("@")) {
-                alert("Email tidak valid!");
-                return;
-            }
-        });
-    }
-});
+//             if (!email.includes("@")) {
+//                 alert("Email tidak valid!");
+//                 return;
+//             }
+//         });
+//     }
+// });
 
 export async function POST(ctx) {
     const data = await ctx.request.formData();

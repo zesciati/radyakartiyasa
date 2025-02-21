@@ -1,0 +1,98 @@
+.contact-section {
+  background: linear-gradient(to bottom, #032415 27%, #fff7e6 27%);
+  
+  position: absolute;
+  top: 84.12%;
+  
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.left-column, .right-column {
+  flex: 1 1 50%;
+  margin-bottom: 20px;
+}
+
+.left-column {
+  color: #757070;
+  font-size: 12px;
+}
+
+.form-control, .form-label {
+  font-size: 14px; 
+  margin: 4px 0;
+  color: #032415;
+  font-size: 12px;
+}
+
+.form-select{
+  font-size: 12px;
+}
+
+.info-card{
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.btn-submit {
+  background-color: #ffffff;
+  color: #032415;
+  padding: 7px 9px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.btn-submit:hover {
+  background-color: #0E3121;
+  color: #D6A84D;
+}
+
+@media (max-width: 992px) {
+  .contact-section {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .info-card {
+    padding: 15px;
+  }
+}
+
+/* @media (max-width: 768px) {
+  .left-column, .right-column {
+      flex: 1 1 100%; 
+  }
+}
+
+@media (max-width: 480px){
+  .contact-section {
+      width: 95%;
+  }
+  .kecil{
+    position:absolute;
+    top: 23%;
+    height: 70%;
+  }
+  
+}

@@ -12,8 +12,17 @@ export const config = {
 
 // Optimizable MIMEs (Ganti tipe webp)
 
-
 // Slugify function
+export function slugify(str) {
+    str
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+export default slugify;
 
 // Date format function
 export function formatDate(dateString) {

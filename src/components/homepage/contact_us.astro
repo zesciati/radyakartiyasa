@@ -1,7 +1,7 @@
 ---
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../../styles/homepage/contact_us.css";
-import 'bootstrap-icons/font/bootstrap-icons.css';
+export const prerender = true
+
+import "../../styles/Homepage/Contact_us.css";
 ---
 
 <html lang="en">
@@ -46,7 +46,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
         <!-- Right Column -->
           <div class="col-lg-6" style="margin-top: 10px;">
             <div class="info-card p-3 rounded" style="font-size: 12px; width: 90%;">
-              <form method="POST">
+              <form id="contact-form" method="POST">
                 <div class="mb-3">
                   <label for="name" class="form-label">Nama</label>
                   <input type="text" class="form-control" id="name" placeholder="Isikan nama lengkap Anda">
@@ -57,7 +57,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
                 </div>
                 <div class="mb-3">
                   <label for="profession" class="form-label">Profesi</label>
-                  <select class="form-select">
+                  <select class="form-select" id="profession">
                     <option value="" disabled selected>Pilih profesi Anda</option>
                     <option value="Karyawan Swasta">Karyawan Swasta</option>
                     <option value="Wirausaha">Wirausaha</option>
@@ -84,5 +84,70 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
         </div>
       </div>
     </section>
+
+    <script> // Form validation, gatau bener ga
+      document.getElementById('contact-form').addEventListener('submit', async function(event) {
+          event.preventDefault();
+  
+          // Clear previous error messages
+          document.getElementById('nameError').innerText = '';
+          document.getElementById('emailError').innerText = '';
+          document.getElementById('professionError').innerText = '';
+          document.getElementById('phoneError').innerText = '';
+          document.getElementById('messageError').innerText = '';
+  
+          // Get values from the form
+          const name = document.getElementById('name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const profession = document.getElementById('profession').value.trim();
+          const phone = document.getElementById('phone').value.trim();
+          const message = document.getElementById('message').value.trim();
+          
+          let isValid = true;
+  
+          // Validate
+          if (name.length < 3) {
+              document.getElementById('nameError').innerText = 'Nama harus lebih dari 3 huruf';
+              isValid = false;
+          }
+          if (email.included("@")) {
+              document.getElementById('emailError').innerText = 'Email harus mengandung @';
+              isValid = false;
+          }
+          if(!/^\d+$/.test(phone)) {
+            document.getElementById('phoneError').innerText = 'No. Handphone hanya angka';
+            isValid = false;
+          }
+  
+          // If valid, you can submit the form or do other actions
+          if (isValid){
+              const req = await fetch("/api/auth/login",{ // endpoint buat tujuan tempat data akan dikirim atau diambil dalam req API
+                  method: "POST",
+                  headers:{
+                      "Content-Type": "application/json"
+                  },
+                  body:JSON.stringify({
+                      "name":name,
+                      "email":email,
+                      "profession":profession,
+                      "phone":phone,
+                      "message":message
+                  })
+              });
+  
+              if(req.ok){ // cek apakah request ke server berhasil dan me-refresh halaman jika berhasil
+                  location.reload();
+              }
+          }
+      });
+  
+      // document.getElementById("logout").addEventListener("click", async function(e){
+      //     e.preventDefault();
+      //     const req = await fetch("/api/auth/logout",{
+      //         method:"POST"
+      //     });
+      // });
+  </script>
+
   </body>
 </html>
