@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            // Cek format email 
             if (!email.includes("@")) {
                 alert("Email tidak valid!");
                 return;
@@ -57,8 +56,8 @@ export async function POST(ctx) {
         body: JSON.stringify({
             name: data.get("name"),
             email: data.get("email"),
-            phone_number: data.get("phone_number"),
-            assistance_type: data.get("assistance_type"),
+            profession: data.get("profession"),
+            phone: data.get("phone"),
             message: data.get("message"),
         })
     });
