@@ -8,3 +8,33 @@ export const config = { // INI KODE BACKEND DIRECTUS
     }
 };
 
+// CMS images folder (ubah format gambar ke WEBP)
+export const cmsImageFolder = "https://backenddirectus.madebybagus.xyz/assets/";
+
+
+// Date format function
+export function formatDate(dateString) {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.toLocaleString("default", { month: "long" });
+    const year = date.getFullYear();
+    return `${day} ${month} ${year}`;
+}
+
+// Day translation
+export const daysTranslation = {
+    en: {
+        full: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        short: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    },
+    id: {
+        full: ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"],
+        short: ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"]
+    }
+};
+
+export function getTranslatedDay(dateString, lang = "id", format = "full") {
+    const date = new Date(dateString);
+    const day = date.getDay();
+    return daysTranslation[lang][format][dayIndex];
+}
