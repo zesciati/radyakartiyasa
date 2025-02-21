@@ -1,0 +1,45 @@
+---
+import Baselayout from "../../layouts/baselayout.astro"
+import "../../styles/Homepage/Home_gallery.css"
+
+// Import JSON data
+import homeGallery from "../../data/Homepage/home-gallery.json";
+---
+
+<Baselayout>
+        <div class="bungkus">
+          <div class="container py-5 position-relative mt-4 ">
+            <!-- Header Section -->
+            <div class="gallery-header">
+              <span class="badge">Gallery Museum</span>
+              <h1 class="title mt-2">
+                <img src="../img/logo-keraton.png" class="logo-keraton" alt="Logo Keraton">Teras Foto
+              </h1>
+            </div>
+
+            <!-- Gallery Section -->
+            <div class="row g-4 mt-5">
+              {homeGallery.map((item) => (
+              <!-- Image 1 -->
+              <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="card">
+                  <img src={item.src} class="card-img-top" alt={item.alt}>
+                  <div class="card-body">
+                    <p class="card-text">{item.text}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+            </div>
+
+            
+
+            <!-- Navigation Arrows -->
+            <div class="d-flex mt-4 naviarrows">
+              <button class="btn btn-outline-secondary butarrow"><i class="bi bi-chevron-left"></i></button>
+              <button class="btn btn-outline-secondary butarrow"><i class="bi bi-chevron-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+</Baselayout>
