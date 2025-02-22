@@ -49,15 +49,15 @@ import "../../styles/Homepage/Contact_us.css";
               <form id="contact-form" method="POST">
                 <div class="mb-3">
                   <label for="name" class="form-label">Nama</label>
-                  <input type="text" class="form-control" id="name" placeholder="Isikan nama lengkap Anda">
+                  <input type="text" class="form-control" id="name" placeholder="Isikan nama lengkap Anda" required>
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="Isikan dengan email aktif Anda">
+                  <input type="email" class="form-control" id="email" placeholder="Isikan dengan email aktif Anda" required>
                 </div>
                 <div class="mb-3">
                   <label for="profession" class="form-label">Profesi</label>
-                  <select class="form-select" id="profession">
+                  <select class="form-select" id="profession" required>
                     <option value="" disabled selected>Pilih profesi Anda</option>
                     <option value="Karyawan Swasta">Karyawan Swasta</option>
                     <option value="Wirausaha">Wirausaha</option>
@@ -67,15 +67,16 @@ import "../../styles/Homepage/Contact_us.css";
                 </div>
                 <div class="mb-3">
                   <label for="phone" class="form-label">No. Handphone</label>
-                  <input type="tel" class="form-control" id="phone" placeholder="Isikan dengan nomor handphone aktif">
+                  <input type="text" class="form-control" id="phone" placeholder="Isikan dengan nomor handphone aktif" required>
                 </div>
                 <div class="mb-3">
                   <label for="message" class="form-label">Pesan</label>
-                  <textarea class="form-control" id="message" rows="4" placeholder="Tuliskan pesan disini ..."></textarea>
+                  <textarea class="form-control" id="message" rows="4" placeholder="Tuliskan pesan disini ..." required></textarea>
                 </div>
 
                 <!-- Site Key Turnstile -->
                 <div class="cf-turnstile" data-sitekey="0x4AAAAAAA9jiHjYAxKgY1mc"></div>
+                <input type="hidden" name="cf-turnstile-response" id="cf-turnstile-response">
       
                 <button type="submit" class="btn btn-dark btn-submit">Kirim Pesan</button>
               </form>
@@ -84,11 +85,17 @@ import "../../styles/Homepage/Contact_us.css";
         </div>
       </div>
     </section>
-
+    
     <script> // Form validation, gatau bener ga
-      document.getElementById('contact-form').addEventListener('submit', async function(event) {
-          event.preventDefault();
-  
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+
+          const turnstileToken = document.getElementById('cf-turnstile-response').value;
+          if (!turnstileToken) {
+            alert("Silakan verifikasi terlebih dahulu.");
+            return;
+          }
+
           // Clear previous error messages
           document.getElementById('nameError').innerText = '';
           document.getElementById('emailError').innerText = '';
@@ -110,44 +117,45 @@ import "../../styles/Homepage/Contact_us.css";
               document.getElementById('nameError').innerText = 'Nama harus lebih dari 3 huruf';
               isValid = false;
           }
-          if (email.included("@")) {
-              document.getElementById('emailError').innerText = 'Email harus mengandung @';
-              isValid = false;
-          }
-          if(!/^\d+$/.test(phone)) {
-            document.getElementById('phoneError').innerText = 'No. Handphone hanya angka';
+          // if (!email.includes("@")) {
+          //     document.getElementById('emailError').innerText = 'Email harus mengandung @';
+          //     isValid = false;
+          // }
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            document.getElementById('emailError').innerText = 'Email tidak valid!';
             isValid = false;
           }
-  
-          // If valid, you can submit the form or do other actions
-          if (isValid){
-              const req = await fetch("/api/auth/login",{ // endpoint buat tujuan tempat data akan dikirim atau diambil dalam req API
-                  method: "POST",
-                  headers:{
-                      "Content-Type": "application/json"
-                  },
-                  body:JSON.stringify({
-                      "name":name,
-                      "email":email,
-                      "profession":profession,
-                      "phone":phone,
-                      "message":message
-                  })
-              });
-  
-              if(req.ok){ // cek apakah request ke server berhasil dan me-refresh halaman jika berhasil
-                  location.reload();
-              }
+          if (!profession) {
+            document.getElementById('professionError').innerText = 'Silakan pilih profesi Anda';
+            isValid = false;
+          }
+          if (!/^\d{10,13}$/.test(phone)) {
+            document.getElementById('phoneError').innerText = 'No. Handphone harus berisi 10-13 digit angka tanpa spasi!';
+            isValid = false;
+          }
+          if (!isValid) {
+            return;
+          }
+          
+          // AJAX
+          try {
+            const req = await fetch('/api/form/submit', { 
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ name, email, profession, phone, message, turnstileToken }),
+            });
+
+            if (req.ok) {
+              location.reload();
+              alert('Pesan berhasil dikirim!');
+            }
+          } catch {
+            alert('Pesan gagal dikirim!');
           }
       });
-  
-      // document.getElementById("logout").addEventListener("click", async function(e){
-      //     e.preventDefault();
-      //     const req = await fetch("/api/auth/logout",{
-      //         method:"POST"
-      //     });
-      // });
-  </script>
+    </script>
 
   </body>
 </html>
