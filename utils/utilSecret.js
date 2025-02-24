@@ -8,9 +8,19 @@ export const config = {
     }
 };
 
-// CMS images folder
+// CMS images folder (Kelola folder gambar)
+export const cmsImagesFolder = "https://backenddirectus.madebybagus.xyz/assets/";
 
-// Optimizable MIMEs (Ganti tipe webp)
+// Optimizable MIMEs (Ganti ke tipe webp semua)
+export const optimizableMimes = {
+    "image/jpg": "image/webp",
+    "image/jpeg": "image/webp",
+    "image/png": "image/webp",
+    "image/gif": "image/webp" 
+}
+export function convertToWebp(mimeType) {
+    return optimizableMimes[mimeType] || mimeType;
+}
 
 // Slugify function
 export function slugify(str) {
@@ -34,6 +44,10 @@ export function formatDate(dateString) {
 }
 
 // Textarea img src replacement
+export const replaceImgSrc = (text, baseUrl) => 
+    text?.replace(/<img\s[^>]*src=["'](.*?)["']/gi, (match, src) => 
+        src.startsWith("http") ? match : match.replace(src, `${baseUrl}${src}`)
+    ) || "";
 
 // File handle function
 
@@ -51,9 +65,8 @@ export const daysTranslation = {
 
 export function translatedDay(dateString, lang = "id", format = "full") {
     const date = new Date(dateString);
-    const day = date.getDay();
+    const day = date.getDay(); // dimulai 0 minggu
     return daysTranslation[lang][format][day];
 }
-// 0 minggu, kalau lang eng nya sunday
 
 // Get interface function
