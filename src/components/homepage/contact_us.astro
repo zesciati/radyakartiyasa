@@ -50,13 +50,16 @@ import "../../styles/Homepage/Contact_us.css";
                 <div class="mb-3">
                   <label for="name" class="form-label">Nama</label>
                   <input type="text" class="form-control" id="name" placeholder="Isikan nama lengkap Anda" required>
+                  <span class="error" id="nameError"></span>
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="Isikan dengan email aktif Anda" required>
+                  <input type="text" class="form-control" id="email" placeholder="Isikan dengan email aktif Anda" required>
+                  <span class="error" id="emailError"></span>
                 </div>
                 <div class="mb-3">
                   <label for="profession" class="form-label">Profesi</label>
+                  <span class="error" id="professionError"></span>
                   <select class="form-select" id="profession" required>
                     <option value="" disabled selected>Pilih profesi Anda</option>
                     <option value="Karyawan Swasta">Karyawan Swasta</option>
@@ -68,15 +71,17 @@ import "../../styles/Homepage/Contact_us.css";
                 <div class="mb-3">
                   <label for="phone" class="form-label">No. Handphone</label>
                   <input type="text" class="form-control" id="phone" placeholder="Isikan dengan nomor handphone aktif" required>
+                  <span class="error" id="phoneError"></span>
                 </div>
                 <div class="mb-3">
                   <label for="message" class="form-label">Pesan</label>
                   <textarea class="form-control" id="message" rows="4" placeholder="Tuliskan pesan disini ..." required></textarea>
+                  <span class="error" id="messageError"></span>
                 </div>
 
                 <!-- Site Key Turnstile -->
                 <div class="cf-turnstile" data-sitekey="0x4AAAAAAA9jiHjYAxKgY1mc"></div>
-                <input type="hidden" name="cf-turnstile-response" id="cf-turnstile-response">
+                <input type="hidden" name="cf-turnystile-response" id="cf-turnstile-response">
       
                 <button type="submit" class="btn btn-dark btn-submit">Kirim Pesan</button>
               </form>
@@ -102,6 +107,7 @@ import "../../styles/Homepage/Contact_us.css";
           document.getElementById('professionError').innerText = '';
           document.getElementById('phoneError').innerText = '';
           document.getElementById('messageError').innerText = '';
+          document.getElementById('turnstileError').innerText = '';
   
           // Get values from the form
           const name = document.getElementById('name').value.trim();
@@ -111,7 +117,7 @@ import "../../styles/Homepage/Contact_us.css";
           const message = document.getElementById('message').value.trim();
           
           let isValid = true;
-  
+
           // Validate
           if (name.length < 3) {
               document.getElementById('nameError').innerText = 'Nama harus lebih dari 3 huruf';
@@ -130,13 +136,10 @@ import "../../styles/Homepage/Contact_us.css";
             isValid = false;
           }
           if (!/^\d{10,13}$/.test(phone)) {
-            document.getElementById('phoneError').innerText = 'No. Handphone harus berisi 10-13 digit angka tanpa spasi!';
+            document.getElementById('phoneError').innerText = 'No. Handphone harus berisi 10-13 digit angka';
             isValid = false;
           }
-          if (!isValid) {
-            return;
-          }
-          
+
           // AJAX
           try {
             const req = await fetch('/api/form/submit', { 
@@ -144,7 +147,13 @@ import "../../styles/Homepage/Contact_us.css";
               headers: {
                 'Content-Type': 'application/json',
               },
-              body: JSON.stringify({ name, email, profession, phone, message, turnstileToken }),
+              body: JSON.stringify({
+                "name":name,
+                "email":email,
+                "profession":profession,
+                "phone":phone,
+                "message":message,
+              }),
             });
 
             if (req.ok) {

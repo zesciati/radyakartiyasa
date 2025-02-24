@@ -71,13 +71,11 @@ export async function POST(ctx) {
         })
     });
 
-    if(!directus.ok) {
-        return new Response(JSON.stringify({message:"Failed to submit form"},{status:400}));
+    return directus;
     }
-    console.log("Directus success");
-
-    return new Response(JSON.stringify({message:"Form submitted"},{status:200}));
+    return new Response(JSON.stringify({message:"Verifikasi Gagal"},{status:400}));
 }
+
 // Menangani request POST dari form
 // export async function POST(ctx){ 
 //     const payload = await ctx.request.json();
