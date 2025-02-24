@@ -43,13 +43,13 @@ export function formatDate(dateString) {
     return `${day} ${month} ${year}`;
 }
 
-// Textarea img src replacement
+// Textarea img src replacement (mengganti semua tag <img> menjadi url gambar dari Directus
 export const replaceImgSrc = (text, baseUrl) => 
     text?.replace(/<img\s[^>]*src=["'](.*?)["']/gi, (match, src) => 
         src.startsWith("http") ? match : match.replace(src, `${baseUrl}${src}`)
     ) || "";
 
-// File handle function
+// File handle function (handle file yang diproses, seperti membaca, menyimpan, atau mengonversi file sebelum dikirim ke backend)
 
 // Day translation
 export const daysTranslation = {
@@ -69,4 +69,4 @@ export function translatedDay(dateString, lang = "id", format = "full") {
     return daysTranslation[lang][format][day];
 }
 
-// Get interface function
+// Get interface function (ambil data dari api backend, directus)
