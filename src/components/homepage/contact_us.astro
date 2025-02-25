@@ -49,18 +49,18 @@ import "../../styles/Homepage/Contact_us.css";
               <form id="contact-form" method="POST">
                 <div class="mb-3">
                   <label for="name" class="form-label">Nama</label>
-                  <input type="text" class="form-control" id="name" placeholder="Isikan nama lengkap Anda" required>
+                  <input type="text" class="form-control" id="name" placeholder="Masukan nama lengkap Anda" required>
                   <span class="error" id="nameError"></span>
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
-                  <input type="text" class="form-control" id="email" placeholder="Isikan dengan email aktif Anda" required>
+                  <input type="text" class="form-control" id="email" placeholder="Masukan dengan email aktif Anda" required>
                   <span class="error" id="emailError"></span>
                 </div>
                 <div class="mb-3">
-                  <label for="profession" class="form-label">Profesi</label>
-                  <span class="error" id="professionError"></span>
-                  <select class="form-select" id="profession" required>
+                  <label for="assistance_type" class="form-label">Profesi</label>
+                  <span class="error" id="assistance_typeError"></span>
+                  <select class="form-select" id="assistance_type" required>
                     <option value="" disabled selected>Pilih profesi Anda</option>
                     <option value="Karyawan Swasta">Karyawan Swasta</option>
                     <option value="Wirausaha">Wirausaha</option>
@@ -69,9 +69,9 @@ import "../../styles/Homepage/Contact_us.css";
                   </select>
                 </div>
                 <div class="mb-3">
-                  <label for="phone" class="form-label">No. Handphone</label>
-                  <input type="text" class="form-control" id="phone" placeholder="Isikan dengan nomor handphone aktif" required>
-                  <span class="error" id="phoneError"></span>
+                  <label for="phone_number" class="form-label">No. Handphone</label>
+                  <input type="text" class="form-control" id="phone_number" placeholder="Masukan dengan nomor handphone aktif" required>
+                  <span class="error" id="phone_numberError"></span>
                 </div>
                 <div class="mb-3">
                   <label for="message" class="form-label">Pesan</label>
@@ -104,16 +104,16 @@ import "../../styles/Homepage/Contact_us.css";
           // Clear previous error messages
           document.getElementById('nameError').innerText = '';
           document.getElementById('emailError').innerText = '';
-          document.getElementById('professionError').innerText = '';
-          document.getElementById('phoneError').innerText = '';
+          document.getElementById('assistance_typeError').innerText = '';
+          document.getElementById('phone_numberError').innerText = '';
           document.getElementById('messageError').innerText = '';
           document.getElementById('turnstileError').innerText = '';
   
           // Get values from the form
           const name = document.getElementById('name').value.trim();
           const email = document.getElementById('email').value.trim();
-          const profession = document.getElementById('profession').value.trim();
-          const phone = document.getElementById('phone').value.trim();
+          const assistance_type = document.getElementById('assistance_type').value.trim();
+          const phone_number = document.getElementById('phone_number').value.trim();
           const message = document.getElementById('message').value.trim();
           
           let isValid = true;
@@ -131,12 +131,12 @@ import "../../styles/Homepage/Contact_us.css";
             document.getElementById('emailError').innerText = 'Email tidak valid!';
             isValid = false;
           }
-          if (!profession) {
-            document.getElementById('professionError').innerText = 'Silakan pilih profesi Anda';
+          if (!assistance_type) {
+            document.getElementById('assistance_typeError').innerText = 'Silakan pilih profesi Anda';
             isValid = false;
           }
-          if (!/^\d{10,13}$/.test(phone)) {
-            document.getElementById('phoneError').innerText = 'No. Handphone harus berisi 10-13 digit angka';
+          if (!/^\d{10,13}$/.test(phone_number)) {
+            document.getElementById('phone_numberError').innerText = 'No. Handphone harus berisi 10-13 digit angka';
             isValid = false;
           }
 
@@ -150,8 +150,8 @@ import "../../styles/Homepage/Contact_us.css";
               body: JSON.stringify({
                 "name":name,
                 "email":email,
-                "profession":profession,
-                "phone":phone,
+                "assistance_type":assistance_type,
+                "phone_number":phone_number,
                 "message":message,
               }),
             });
