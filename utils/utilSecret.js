@@ -7,7 +7,6 @@ export const config = {
 };
 
 // CMS images folder (Kelola folder gambar)
-export const cmsImagesFolder = "https://backenddirectus.madebybagus.xyz/assets/";
 
 // Optimizable MIMEs (Ganti ke tipe webp semua)
 export const optimizableMimes = {
@@ -42,7 +41,7 @@ export function formatDate(dateString) {
 }
 
 // Textarea img src replacement (Ganti semua tag <img> menjadi url gambar dari Directus
-export const replaceImgSrc = (text, baseUrl) => 
+export const replaceImgSrc = (text, baseUrl) => // -> MASIH GA YAKIN
     text?.replace(/<img\s[^>]*src=["'](.*?)["']/gi, (match, src) => 
         src.startsWith("http") ? match : match.replace(src, `${baseUrl}${src}`)
     ) || "";
