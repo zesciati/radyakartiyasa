@@ -1,0 +1,72 @@
+---
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/navbar2.css";
+
+// Import JSON data
+import Navbardata from "./../data/navbar/navbar.json";
+import Navbardestinationdata from "./../data/navbar/navbardestination.json";
+
+const {lang} = Astro.props;
+---
+
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark py-4 with-blur-background">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand logo" href="#">
+      <img src="/img/icon/logo_putih.svg" alt="Logo" width="140" height="57" class="d-inline-block align-text-top">
+    </a>
+    <!-- Toggle Button for Mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Navbar Links -->
+    {Navbardata.map((item)=>(
+    <div class="collapse navbar-collapse " id="navbarNav">
+      <ul class="navbar-nav mx-auto ">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href={item.src[0]}>{item.title[0]}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href={item.src[1]}>{item.title[1]}</a>
+        </li>
+        <li class="nav-item dropdown">
+          <!-- !tidak menuju ke destinationpage -->
+          <a class="nav-link" href="/[lang]/destinationpage" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {item.title[5]}
+            <img src="../img/icon/chevron-down-white.svg" alt="">
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {Navbardestinationdata.map((item)=>(
+            <li><a class="dropdown-item" href={item.destinationsrc}>{item.destinationtitle}</a></li>
+            ))}
+            {/* <li><a class="dropdown-item" href="/[lang]/destinationpage">Submenu 2</a></li> */}
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href={item.src[2]}>{item.title[2]}</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="#">{item.title[3]}</a>
+        </li>
+        
+        {/* <!-- <li class="nav-item">
+          <a class="btn btn-outline-light " href="#">Hubungi Kami</a>
+        </li> --> */}
+      </ul>
+      <br>
+        <a class="btn btn-outline-light me-auto" href={item.src[3]}>{item.title[4]}</a>
+    </div>
+    ))}
+  </div>
+</nav>  
+
+
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"
+>
+  // import "bootstrap/dist/js/bootstrap.bundle.min.js";
+</script>
