@@ -69,7 +69,7 @@ export function translatedDay(dateString, lang = "id", format = "full") {
 }
 
 // Get interface function (ambil data dari api backend, directus)
-export function fetchData() { // GA YAKIN
+export async function fetchData() { // GA YAKIN
     const data = await getInterface("https://backenddirectus.madebybagus.xyz/items");
     console.log(data);
 }
