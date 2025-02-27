@@ -1,9 +1,15 @@
 .contact-section {
   background: linear-gradient(to bottom, #032415 27%, #fff7e6 27%);
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  min-height: 100vh;
+  padding: 40px 0;
   
-  position: absolute;
-  top: 84.12%;
-  
+}
+
+.text2{
+  margin-top: 100px;
 }
 
 .container {
@@ -51,6 +57,12 @@
   background-color: #0E3121;
   color: #D6A84D;
 }
+
+.cf-turnstile { /* kecilin size widget */
+  transform: scale(0.9);
+  transform-origin: left; 
+}
+
 
 @media (max-width: 992px) {
   .contact-section {

@@ -1,5 +1,5 @@
 import { onRequest } from "./middleware.js";
-import { config, secretKey } from "./utilsSecret.js";
+import { config, secretKey } from "./utilSecret.js";
 
 // document.addEventListener("DOMContentLoaded", function () {
 //     const form = document.getElementById("contactForm");
