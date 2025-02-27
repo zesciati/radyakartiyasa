@@ -1,4 +1,3 @@
-import { onRequest } from "./middleware.js";
 import { config, secretKey } from "./utilSecret.js";
 
 // document.addEventListener("DOMContentLoaded", function () {
