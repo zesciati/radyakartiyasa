@@ -26,11 +26,12 @@
   color: white;
   -webkit-text-stroke: 1px #000;
 }
-.promo-text {
+
+/* .promo-text {
   font-size: 1rem;
   margin-bottom: 20px;
-}
-.promo-btn {
+} */
+/* .promo-btn {
   background-color: transparent;
   border: 1px solid #fff;
   color: #fff;
@@ -51,7 +52,8 @@
 }
 .bi-arrow-right{
     color: #e3a539;
-}
+} */
 .promo-btn:hover span {
-  color: #000; /* Ikon berubah warna bersamaan dengan teks */
+  /* color: #000;  */
+  /* Ikon berubah warna bersamaan dengan teks */
 }

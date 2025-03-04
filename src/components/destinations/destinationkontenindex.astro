@@ -1,21 +1,31 @@
 ---
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../../styles/homepage/destinationeventslider.css";
+import "../../styles/homepage/destinationasliindex.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 // Import JSON data destination
 import homeDestinationIndex from "../../data/homepagejson/home-destinationindex.json";
-
-const {lang} = Astro.props;
 
 const identity = {
   title: "Paket Kunjungan Museum",
   date: "2025-02-18",
   description: "Deskripsi singkat artikel ini",
   tags: ["tutorial", "web development", "astro"],
-  permalink: `/${lang}/destination`
+  permalink: "/id-ID/"
 };
 
+export function getStaticPaths () {
+  return [
+  {params: {lang: 'id-ID'}},
+  {params: {lang: 'en-US'}},
+  ];
+}
+const {lang} = Astro.params;
+// const {destination} = Astro.props;
+
+const allPosts = Object.values(import.meta.glob('./destination/*.astro', { eager: true }));
+const { url } = Astro.props;
+// const { url }: { url: string } = Astro.props;
 
 
 
@@ -32,18 +42,8 @@ const identity = {
 ---
 
             <!-- NOTE DESTINATION INDEX & PROMO KUNJUNGAN SECTION -->
-        <div class="container-fluid py-5" style="background-color: #fef9ec;">
+        <div class="container-fluid py-5" style="background-color: white;">
           <div class="container">
-            <div class="row align-items-center mb-4 lebar-destinasi-index">
-              <div class="col-md-9">
-                <div class="badge py-2 px-3 d-inline-block mb-3 gelar " style="color: #15803D; background-color: #F0FDF4;">Destinasi</div>
-                <h2 class="title">{identity.title}</h2>
-              </div>
-              <div class="col-md-3 text-md-end text-center">
-                <a href=`/${lang}/destination` class="btn btn-outline-dark border-0 icon-hover">Lihat semua Destinasi <img src="../img/icon/arrow-right.svg" class="ms-2 icon" alt="Arrow"></a>
-              </div>
-            </div>
-
             <div class="row g-4">
               <!-- Card 1 -->
               {homeDestinationIndex.map((item) => (
@@ -53,7 +53,7 @@ const identity = {
                   <div class="card-body">
                     <h5 class="card-title">{item.title}</h5>
                     <p class="card-text">{item.text}</p>
-                    <a href="#" class="btn btn-outline-warning informasi-detail">Informasi detail <img src="../img/icon/chevron-right-gold.svg" class="ms-2" alt="Chevron"></a>
+                    <a href={url} class="btn btn-outline-warning informasi-detail">Lihat detail <img src="../img/icon/chevron-right-gold.svg" class="ms-2" alt="Chevron"></a>
                     <a href="#" class="btn btn-booking-color ms-2">Booking <img src="../img/icon/arrow-right-gold.svg" class="ms-2" alt="Arrow"></a>
                   </div>
                 </div>

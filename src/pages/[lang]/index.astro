@@ -10,6 +10,7 @@ import HomepageGallery from "../../components/homepage/home_gallery.astro"
 import HomepageTestimonial from "../../components/homepage/testimonial.astro"
 import HomepageFAQ from "../../components/homepage/faq.astro"
 import HomepageDoDont from "../../components/homepage/do's_dont's.astro";
+import Navbar from "../../components/navbar.astro"
 const pageTitle = "Home Page Layout 🚀"
 
 
@@ -27,7 +28,7 @@ export const prerender = true
 
 <!-- HOMEPAGE -->
 <Homepagelayout pageTitle={pageTitle}>
-  <HomepageHero/>
+  <HomepageHero lang={lang}/>
   <HomepageAbout_us lang={lang}/>
   <HomepageDestinationIndex lang={lang}/>
   <HomepagePromo lang={lang}/>

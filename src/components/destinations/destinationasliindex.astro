@@ -16,17 +16,10 @@ const identity = {
   permalink: "/id-ID/"
 };
 
-export function getStaticPaths () {
-  return [
-  {params: {lang: 'id-ID'}},
-  {params: {lang: 'en-US'}},
-  ];
-}
-const {lang} = Astro.params;
-const {destination} = Astro.props;
 
 
-const allPosts = Object.values(import.meta.glob(`../../pages/${lang}/destination/*.astro`, { eager: true }));
+
+// const allPosts = Object.values(import.meta.glob(`../../pages/${lang}/destination/*.astro`, { eager: true }));
 // const allPosts = Object.entries(import.meta.glob(`../../pages/${lang}/destination/*.astro`, { eager: true }))
 //   .map(([path, module]) => ({
 //     url: path.replace('../../pages/', '/').replace('.astro', ''),
@@ -46,7 +39,7 @@ const allPosts = Object.values(import.meta.glob(`../../pages/${lang}/destination
 ---
 
             <!-- NOTE DESTINATION INDEX & PROMO KUNJUNGAN SECTION -->
-        <!-- <div class="container-fluid py-5" style="background-color: white;">
+        <div class="container-fluid py-5" style="background-color: white;">
           <div class="container">
             <div class="row g-4">
               {homeDestinationIndex.map((item) => (
@@ -56,9 +49,9 @@ const allPosts = Object.values(import.meta.glob(`../../pages/${lang}/destination
                   <div class="card-body">
                     <h5 class="card-title">{item.title}</h5>
                     <p class="card-text">{item.text}</p>
-                    {allPosts.map((post:any) => 
+                    {/* {allPosts.map((post:any) =>  */}
                     <a href=`/{post.url}/{post.frontmatter.identity.title}` class="btn btn-outline-warning informasi-detail">Lihat detail <img src="../img/icon/chevron-right-gold.svg" class="ms-2" alt="Chevron"></a>
-                    )}
+                    {/* )} */}
                     <a href="#" class="btn btn-booking-color ms-2">Booking <img src="../img/icon/arrow-right-gold.svg" class="ms-2" alt="Arrow"></a>
                   </div>
                 </div>
@@ -66,9 +59,9 @@ const allPosts = Object.values(import.meta.glob(`../../pages/${lang}/destination
               ))} 
             </div>
           </div>
-        </div> -->
+        </div>
 
-        {allPosts.map((post: any) => <Destinationkontenindex url={post.url} />)}
+        {/* {allPosts.map((post: any) => <Destinationkontenindex url={post.url} />)} */}
 
 
 <script

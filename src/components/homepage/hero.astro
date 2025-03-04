@@ -2,6 +2,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/homepage/hero.css";
 import Navbar from "../navbar.astro";
+
+const {lang} = Astro.props;
 ---
 
 
@@ -9,8 +11,7 @@ import Navbar from "../navbar.astro";
 <div class="hero-section">
   <img src="../img/keraton-tari.png" alt="Museum Keraton Yogyakarta" class="hero-image">
   <div class="gradient-overlay"></div>
-  <Navbar/>
-  
+  <Navbar lang={lang}/>
   <div class="content-box">
       <div class="welcome-label">Selamat datang di</div>
       <h1 class="title" style="color: #ffffff;">Museum Pariwisata Kagungan Dalem Keraton Yogyakarta</h1>
