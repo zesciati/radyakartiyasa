@@ -3,11 +3,12 @@
 // Import JSON data
 import DataeventHero from "../../data/event/event-hero.json";
 
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/event/event-hero.css/";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Navbar from "../navbar.astro";
+
+import {imagesFolder, convertToWebp, replaceImgSrc, slugify, translatedDay, fetchData} from "../../../utils/utilSecret.js";
 ---
     
     <!-- HERO SECTION -->

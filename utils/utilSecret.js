@@ -7,7 +7,7 @@ export const config = {
 };
 
 // CMS images folder (Kelola folder gambar)
-
+export const imagesFolder = "https://backenddirectus.madebybagus.xyz/assets/"; // GA YAKIN
 
 // Optimizable MIMEs (Ganti ke tipe webp semua)
 export const optimizableMimes = {
