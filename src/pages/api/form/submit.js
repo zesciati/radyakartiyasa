@@ -48,10 +48,10 @@ export async function POST(ctx){
     if(turnstile.ok){
     const directus = await fetch("https://backenddirectus.madebybagus.xyz/items/contact", {
         headers: {
-          Authorization: config.Authorization,
-          "CF-Access-Client-Id": config["CF-Access-Client-Id"],
-          "CF-Access-Client-Secret": config["CF-Access-Client-Secret"],
-          "Content-Type": "application/json",
+        Authorization: config.Authorization,
+        "CF-Access-Client-Id": config["CF-Access-Client-Id"],
+        "CF-Access-Client-Secret": config["CF-Access-Client-Secret"],
+        "Content-Type": "application/json",
         },
         method: "POST",
 
@@ -67,7 +67,7 @@ export async function POST(ctx){
     return directus;
     }
     return new Response(JSON.stringify({message:"Gagal"},{status:400}));
-  }
+}
 
 // Menangani request POST dari form 
 // export async function POST(ctx){ 
