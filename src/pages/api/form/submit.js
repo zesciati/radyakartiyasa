@@ -47,7 +47,7 @@ export async function POST(ctx){
     console.dir(turnstile.status);
 
     if(turnstile.ok){
-    const directus = await fetch("https://backenddirectus.madebybagus.xyz/items/contact", {
+    const directus = await fetch("https://backenddirectus.madebybagus.xyz/items/contact_us", {
         headers: {
           Authorization: config.Authorization,
           "CF-Access-Client-Id": config["CF-Access-Client-Id"],

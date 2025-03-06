@@ -7,7 +7,7 @@ export const config = {
 };
 
 // CMS images folder (Kelola folder gambar)
-export const imagesFolder = "https://backenddirectus.madebybagus.xyz/assets/"; // gayakin
+export const imagesFolder = "https://backenddirectus.madebybagus.xyz/assets/";
 
 // Optimizable MIMEs (Ganti ke tipe webp semua)
 export const optimizableMimes = {
