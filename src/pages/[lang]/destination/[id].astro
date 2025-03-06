@@ -1,0 +1,36 @@
+---
+export async function getStaticPaths () {
+  //panggil semua bahasa dari collection languages
+  // const fetchlang = await fetch ("https://backenddirectus.madebybagus.xyz/items/languages",{
+  //   headers:{"headers":"values"}
+  // });
+  // const langdata = await fetchlang.json();
+  // let resdata = [];
+  // langdata.data.map(async (itemlang) => {
+  //   const fetchdestination = await fetch(`https://backenddirectus.madebybagus.xyz/items/destinations?deep[translations][_filter][languages_code][_eq]=${itemlang.code}`);
+
+  //   const destdata = await fetchdestination.json()
+  //   destdata.data.map(async (itemdest) => {
+  //     const resobj = {
+  //       lang: itemlang.code,
+  //       id: itemdest.id
+  //     };
+
+  //     resdata.push(resobj);
+  //   })
+  // })
+
+  return [
+    {params: {lang: 'id-ID',id:1}},
+    {params: {lang: 'id-ID',id:2}},
+    {params: {lang: 'id-ID',id:3}},
+    {params: {lang: 'en-US',id:1}},
+    {params: {lang: 'en-US',id:2}},
+    {params: {lang: 'en-US',id:3}},
+  ];
+}
+const {lang,id} = Astro.params
+export const prerender = true
+---
+bahasa: {lang}
+id: {id}

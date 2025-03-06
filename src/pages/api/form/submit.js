@@ -1,4 +1,4 @@
-import { config, secretKey } from "../../../../../../utils/utilSecret.js";
+import { config, secretKey } from "../../../../utils/utilSecret.js";
 
 // document.addEventListener("DOMContentLoaded", function () {
 //     const form = document.getElementById("contactForm");
