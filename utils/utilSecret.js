@@ -1,13 +1,13 @@
 export const secretKey = "0x4AAAAAAA9jiKFyiHdq58yiOgJfVaVL-cE";
 
 export const config = {
-    Authorization : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA5YTFiYmQ2LWUwMGQtNGFlNy1hNjM4LTkxMzI3Y2NiMTY1MCIsInJvbGUiOiIxN2VkN2U3Mi0zMmI1LTRlNzQtOThiNS04YTcyNGUwN2Q2ZTgiLCJhcHBfYWNjZXNzIjp0cnVlLCJhZG1pbl9hY2Nlc3MiOnRydWUsImlhdCI6MTczODMwNjQ0NiwiZXhwIjoxNzM4MzA3MzQ2LCJpc3MiOiJkaXJlY3R1cyJ9.Aj82yeqJZvbNaa6X1d-IXWX9oBkrbaFVvYdiTGy2Qms",
+    Authorization : "Bearer L4I9aZNnHUW1VaxqAzZ49DvV7l9xRuk2",
     "CF-Access-Client-Id": "afb26c8995066a72ef375fcffb9f1d47.access", 
     "CF-Access-Client-Secret": "f7f4995a6d1cd59926c34ffda3a1b3014f4eb7cc79855af29b97ba9d53deaf97"
 };
 
 // CMS images folder (Kelola folder gambar)
-export const imagesFolder = "https://backenddirectus.madebybagus.xyz/assets/"; // GA YAKIN
+export const imagesFolder = "https://backenddirectus.madebybagus.xyz/assets/"; // gayakin
 
 // Optimizable MIMEs (Ganti ke tipe webp semua)
 export const optimizableMimes = {
@@ -16,12 +16,12 @@ export const optimizableMimes = {
     "image/png": "image/webp",
     "image/gif": "image/webp" 
 }
-export function convertToWebp(mimeType) { // import { optimizableMimes } from "./utils/utilSecret.js";
+export function convertToWebp(mimeType) { 
     return optimizableMimes[mimeType] || mimeType;
 }
 
 // Slugify function (untuk ubah judul atau teks menjadi url yang ramah SEO)
-export function slugify(str) { // import {slugify, formatDate} from "./utils/utilSecret.js";
+export function slugify(str) {
     str
     .toLowerCase()
     .trim()
@@ -42,7 +42,7 @@ export function formatDate(dateString) {
 }
 
 // Textarea img src replacement (Ganti semua tag <img> menjadi url gambar dari Directus
-export const replaceImgSrc = (text, baseUrl) => // MASIH GA YAKIN
+export const replaceImgSrc = (text, baseUrl) => 
     text?.replace(/<img\s[^>]*src=["'](.*?)["']/gi, (match, src) => 
         src.startsWith("http") ? match : match.replace(src, `${baseUrl}${src}`)
     ) || "";
@@ -69,8 +69,8 @@ export function translatedDay(dateString, lang = "id", format = "full") {
 }
 
 // Get interface function (ambil data dari api backend, directus)
-export async function fetchData() { // GA YAKIN
+export async function fetchData() { // gayakin
     const data = await getInterface("https://backenddirectus.madebybagus.xyz/items");
     console.log(data);
 }
-fetchData(); // import { getInterface } from "./utils/utilSecret.js";
+fetchData();
